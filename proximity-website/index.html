@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proximity Partners | Hyper-Local Search Optimization</title>
+    <style>
+        :root { 
+            --navy: #1A252F; 
+            --slate: #2C3E50; 
+            --white: #FFFFFF; 
+            --light-gray: #F8F9FA; 
+            --border-color: #EAEAEA;
+        }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+        }
+        body { 
+            color: var(--slate); 
+            background-color: var(--white); 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { 
+            max-width: 1100px; 
+            margin: 0 auto; 
+            padding: 0 2rem; 
+        }
+        
+        /* Navigation / Header */
+        header { 
+            padding: 2rem 0; 
+            border-bottom: 1px solid var(--border-color); 
+        }
+        .brand {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo-text { 
+            font-size: 1.4rem; 
+            font-weight: 800; 
+            color: var(--navy); 
+            letter-spacing: 2px; 
+            line-height: 1;
+        }
+        .logo-subtext { 
+            font-weight: 300; 
+            letter-spacing: 4px; 
+            font-size: 0.8rem; 
+            color: var(--slate); 
+            margin-top: 0.3rem; 
+            text-transform: uppercase;
+        }
+        
+        /* Hero Branding Section */
+        .hero { 
+            padding: 6rem 0; 
+            text-align: center; 
+            background: linear-gradient(to bottom, var(--light-gray), var(--white)); 
+        }
+        h1 { 
+            font-size: 2.75rem; 
+            font-weight: 800; 
+            color: var(--navy); 
+            margin-bottom: 1.5rem; 
+            letter-spacing: -0.5px; 
+            line-height: 1.2;
+        }
+        .hero p { 
+            font-size: 1.25rem; 
+            max-width: 750px; 
+            margin: 0 auto 2.5rem; 
+            color: var(--slate); 
+        }
+        .btn { 
+            display: inline-block; 
+            background-color: var(--navy); 
+            color: var(--white); 
+            padding: 0.85rem 2.25rem; 
+            font-weight: 700; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            letter-spacing: 0.5px; 
+            transition: transform 0.2s, background-color 0.2s; 
+        }
+        .btn:hover { 
+            transform: translateY(-2px); 
+            background-color: #111921;
+        }
+
+        /* The Service Plan Breakdown */
+        .features { 
+            padding: 6rem 0; 
+        }
+        .section-title { 
+            font-size: 2rem; 
+            font-weight: 800; 
+            text-align: center; 
+            margin-bottom: 3.5rem; 
+            color: var(--navy); 
+            letter-spacing: -0.5px;
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2.5rem; 
+        }
+        .feature-card { 
+            padding: 2rem; 
+            border: 1px solid var(--border-color); 
+            border-radius: 6px; 
+            background-color: var(--white);
+        }
+        .feature-card h3 { 
+            margin-bottom: 0.75rem; 
+            color: var(--navy); 
+            font-weight: 700; 
+            font-size: 1.2rem;
+        }
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #556370;
+        }
+
+        /* Transparent Pricing Matrix */
+        .pricing { 
+            padding: 6rem 0; 
+            background-color: var(--light-gray); 
+        }
+        .pricing-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 2.5rem; 
+            max-width: 850px; 
+            margin: 0 auto; 
+        }
+        .price-card { 
+            background: var(--white); 
+            padding: 3rem 2rem; 
+            border-radius: 8px; 
+            border: 1px solid var(--border-color); 
+            text-align: center; 
+        }
+        .price-card.premium-tier { 
+            border: 2px solid var(--navy); 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .price-card h3 { 
+            font-size: 1.6rem; 
+            color: var(--navy); 
+            margin-bottom: 0.25rem; 
+            font-weight: 800;
+        }
+        .tier-subtitle {
+            color: #7F8C8D; 
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .price { 
+            font-size: 3rem; 
+            font-weight: 800; 
+            color: var(--navy); 
+            margin-bottom: 0.25rem; 
+        }
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #7F8C8D;
+        }
+        .setup { 
+            font-size: 0.95rem; 
+            color: #7F8C8D; 
+            margin-bottom: 2rem; 
+            font-weight: 500;
+        }
+        .price-card p.tier-desc { 
+            font-size: 0.95rem; 
+            color: var(--slate); 
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+        .commitment-note {
+            text-align: center; 
+            margin-top: 3rem; 
+            font-size: 0.9rem; 
+            color: #7F8C8D;
+        }
+        
+        /* De-risking & Trust Structure */
+        .guarantee { 
+            padding: 6rem 0; 
+            text-align: center; 
+            max-width: 750px; 
+            margin: 0 auto; 
+        }
+        .guarantee p {
+            font-size: 1.1rem;
+            color: #556370;
+            margin-top: 1rem;
+        }
+        
+        /* Corporate Footer */
+        footer { 
+            background-color: var(--navy); 
+            color: var(--white); 
+            padding: 4rem 0; 
+            text-align: center; 
+            font-size: 0.95rem; 
+        }
+        footer p.contact-info { 
+            letter-spacing: 0.5px; 
+            margin-bottom: 1rem;
+        }
+        footer p.contact-info strong {
+            color: var(--white);
+            background-color: rgba(255,255,255,0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        footer p.copyright { 
+            font-size: 0.85rem; 
+            opacity: 0.5; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="brand">
+                <div class="logo-text">PROXIMITY</div>
+                <div class="logo-subtext">Partners</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>We Put Local Businesses at the Top of the "Near Me" Search Grid.</h1>
+            <p>Every day, hundreds of buyers in your neighborhood search for your exact services on Google Maps. If your business is locked out of the top 3 spots, you remain completely invisible. We plug the leak.</p>
+            <a href="mailto:go@proximitypartners.business" class="btn">Request a Local Search Audit</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">The Local Visibility Plan</h2>
+            <div class="grid">
+                <div class="feature-card">
+                    <h3>Profile Rebuild</h3>
+                    <p>Complete programmatic restructuring of your categories, service listings, data structures, and merchant descriptions with high-volume local terms.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>1-Page Mobile Match</h3>
+                    <p>A high-speed, single-page web environment engineered strictly to convert map traffic directly into taps, clicks, and incoming phone calls.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Local Network Sync</h3>
+                    <p>Establishing identical, high-authority commercial directory profiles across Apple Maps, Yelp, Bing Places, Facebook, and Nextdoor.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Review Accelerator</h3>
+                    <p>Deployment of a simplified review-request text pipeline built to systematically collect premium five-star feedback from your customers instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Hands-Free Engagement</h3>
+                    <p>Strategic scheduling of local business updates and comprehensive moderation of incoming review strings with guaranteed forty-eight-hour response times.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>The 5th-of-the-Month Report</h3>
+                    <p>A transparent, single-page performance summary monitoring raw customer call logs, route direction requests, and direct visibility rankings against your top local competitor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Tiered Pricing Matrix</h2>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Volume Tier</h3>
+                    <div class="tier-subtitle">Food & Retail</div>
+                    <div class="price">$199<span>/mo</span></div>
+                    <div class="setup">$199 One-Time Setup Fee</div>
+                    <p class="tier-desc">Optimized performance tracking built specifically for local taco shops, food trucks, casual eateries, barbershops, and independent boutique storefronts.</p>
+                    Value Tier
+Independent Services
+$299/mo
+$299 One-Time Setup Fee
+High-yield operational management engineered for independent automotive repair shops, beauty salons, local plumbing operators, roofers, and professional handymen.
+
+
+*All service agreements require an initial three-month commitment to capture algorithm indexing loops, moving to standard month-to-month terms thereafter.
+
+Our 90-Day Performance Guarantee
+We tie our firm's success directly to your physical revenue pipelines. If your business dashboard does not reflect a clear, measurable increase in organic phone calls or profile customer interactions within your first ninety days of deployment, you retain the right to cancel immediately with zero penalties or hidden exit overhead.
+Managing Partner Access: go@proximitypartners.business
+© 2026 Proximity Partners. Albuquerque, NM. All rights reserved.

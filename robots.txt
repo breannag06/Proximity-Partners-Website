@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /thanks.html
-Disallow: /subscribed.html
 
 Sitemap: https://proximitypartners.business/sitemap.xml

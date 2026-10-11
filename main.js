@@ -42,53 +42,6 @@
     });
   });
 
-  // PayPal subscription buttons (one SDK load, one button per plan).
-  // Plan IDs live on each .paypal-slot in index.html.
-  var PAYPAL_CLIENT_ID = 'BAAUO3E8Cng2mw2qwKUlkLZTrb5TeXG2_Wm2oirWcadB8GSUd4MiQ5yYqpWFhTSdkddDbTfqV-OLhuL8Pw';
-  var paySlots = document.querySelectorAll('.paypal-slot');
-  if (paySlots.length) {
-    var payFailed = function () {
-      paySlots.forEach(function (slot) {
-        slot.innerHTML = '<p class="plan-pay-fallback">PayPal didn\u2019t load. Email <a href="mailto:go@proximitypartners.business">go@proximitypartners.business</a> and I\u2019ll send you a link.</p>';
-      });
-    };
-    var renderPayPal = function () {
-      if (!window.paypal) return payFailed();
-      paySlots.forEach(function (slot) {
-        window.paypal.Buttons({
-          style: { shape: 'pill', color: 'silver', layout: 'vertical', label: 'paypal' },
-          createSubscription: function (data, actions) {
-            return actions.subscription.create({ plan_id: slot.getAttribute('data-plan-id') });
-          },
-          onApprove: function (data) {
-            window.location.href = '/subscribed.html?plan=' +
-              encodeURIComponent(slot.getAttribute('data-plan-name')) +
-              '&id=' + encodeURIComponent(data.subscriptionID);
-          }
-        }).render(slot);
-      });
-    };
-    var loadPayPal = function () {
-      var s = document.createElement('script');
-      s.src = 'https://www.paypal.com/sdk/js?client-id=' + PAYPAL_CLIENT_ID + '&vault=true&intent=subscription';
-      s.setAttribute('data-sdk-integration-source', 'button-factory');
-      s.onload = renderPayPal;
-      s.onerror = payFailed;
-      document.head.appendChild(s);
-    };
-    // Load the SDK only when the plans come near the screen
-    if ('IntersectionObserver' in window) {
-      var payIO = new IntersectionObserver(function (entries) {
-        if (!entries.some(function (e) { return e.isIntersecting; })) return;
-        payIO.disconnect();
-        loadPayPal();
-      }, { rootMargin: '800px 0px' });
-      paySlots.forEach(function (slot) { payIO.observe(slot); });
-    } else {
-      loadPayPal();
-    }
-  }
-
   // Fade and rise on scroll
   var items = document.querySelectorAll('.reveal');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

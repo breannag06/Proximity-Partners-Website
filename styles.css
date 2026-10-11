@@ -512,21 +512,6 @@ h2 { font-size: var(--fs-h2); }
 }
 .plan .btn { margin-top: auto; align-self: flex-start; }
 
-.plan-pay {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--rule);
-}
-.plan-pay-label { max-width: 22rem; margin-bottom: 1rem; font-size: var(--fs-small); color: var(--slate); }
-.paypal-slot {
-  /* PayPal's iframes carry a high z-index; contain them so the sticky header and menu stay on top */
-  position: relative;
-  z-index: 0;
-  max-width: 20rem;
-  min-height: 6.5rem;
-}
-.plan-pay-fallback { font-size: var(--fs-small); color: var(--slate); }
-
 @media (min-width: 48em) {
   .plan-grid { grid-template-columns: 1fr 1fr; }
   .plan-for { min-height: 3.2em; } /* keeps both prices on one baseline when a line wraps */

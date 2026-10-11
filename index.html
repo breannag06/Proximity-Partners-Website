@@ -8,6 +8,7 @@
   <link rel="canonical" href="https://proximitypartners.business/">
   <meta name="theme-color" content="#19293E">
   <meta name="color-scheme" content="light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 
   <!-- Open Graph / social -->
   <meta property="og:type" content="website">
@@ -380,11 +381,16 @@
           </ul>
         </div>
 
-        <!-- PLACEHOLDER (form backend): the site is hosted on GitHub Pages, which can't receive form posts.
-             For now, main.js turns a submission into a pre-filled email to go@proximitypartners.business
-             in the visitor's own email app. Swap in a real form service (or move hosting to Netlify and
-             restore Netlify Forms) when you're ready. -->
-        <form class="audit-form reveal" name="audit" method="POST" action="mailto:go@proximitypartners.business?subject=Free%20Maps%20audit%20request" enctype="text/plain" data-mailto="go@proximitypartners.business">
+        <!-- Submissions are emailed to go@proximitypartners.business by FormSubmit (formsubmit.co).
+             The first submission sends an activation email to that inbox; click the link once to switch the form on. -->
+        <form class="audit-form reveal" name="audit" method="POST" action="https://formsubmit.co/go@proximitypartners.business">
+          <input type="hidden" name="_subject" value="New free Maps audit request">
+          <input type="hidden" name="_next" value="https://proximitypartners.business/thanks.html">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <p class="visually-hidden">
+            <label>Leave this empty: <input name="_honey" tabindex="-1" autocomplete="off"></label>
+          </p>
 
           <div class="field">
             <label for="f-name">Your name</label>
@@ -396,7 +402,7 @@
           </div>
           <div class="field">
             <label for="f-contact">Phone or email</label>
-            <input id="f-contact" name="contact" type="text" autocomplete="email" inputmode="email" required aria-describedby="f-contact-hint">
+            <input id="f-contact" name="contact" type="text" autocomplete="on" required aria-describedby="f-contact-hint">
             <p class="hint" id="f-contact-hint">Whichever you actually check.</p>
           </div>
           <div class="field">
@@ -412,8 +418,7 @@
             </div>
           </div>
           <button class="btn btn-block" type="submit">Get my free audit <span class="btn-arrow" aria-hidden="true">&rarr;</span></button>
-          <p class="form-note">This opens your email app with your request filled in. Just hit send. I&rsquo;ll only use it to send your audit. No mailing list.</p>
-          <p class="form-status" role="status" aria-live="polite" hidden></p>
+          <p class="form-note">I&rsquo;ll only use this to send your audit. No mailing list.</p>
         </form>
       </div>
     </section>

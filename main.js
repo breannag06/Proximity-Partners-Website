@@ -42,28 +42,6 @@
     });
   });
 
-  // Audit form: until a form service is connected, send the request as a pre-filled email
-  var auditForm = document.querySelector('form[data-mailto]');
-  if (auditForm) {
-    auditForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var f = auditForm.elements;
-      var body = [
-        'Name: ' + f.name.value,
-        'Business: ' + f.business.value,
-        'Phone or email: ' + f.contact.value,
-        'Business type: ' + f.business_type.value
-      ].join('\n');
-      window.location.href = 'mailto:' + auditForm.getAttribute('data-mailto') +
-        '?subject=' + encodeURIComponent('Free Maps audit request: ' + f.business.value) +
-        '&body=' + encodeURIComponent(body);
-      var status = auditForm.querySelector('.form-status');
-      status.innerHTML = 'Your email app should open with this filled in. Hit send and you&rsquo;re done. ' +
-        'If nothing opened, email <a href="mailto:go@proximitypartners.business">go@proximitypartners.business</a> or text 210-537-3885.';
-      status.hidden = false;
-    });
-  }
-
   // PayPal subscription buttons (one SDK load, one button per plan).
   // Plan IDs live on each .paypal-slot in index.html.
   var PAYPAL_CLIENT_ID = 'BAAUO3E8Cng2mw2qwKUlkLZTrb5TeXG2_Wm2oirWcadB8GSUd4MiQ5yYqpWFhTSdkddDbTfqV-OLhuL8Pw';

@@ -803,11 +803,3 @@ h2 { font-size: var(--fs-h2); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
-
-.form-status {
-  margin-top: 1rem;
-  padding: 0.85rem 1rem;
-  border-left: 2px solid var(--navy);
-  background: var(--white);
-  font-size: var(--fs-small);
-}

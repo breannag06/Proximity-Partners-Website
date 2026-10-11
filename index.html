@@ -1,305 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proximity Partners | Hyper-Local Search Optimization</title>
-    <style>
-        :root { 
-            --navy: #1A252F; 
-            --slate: #2C3E50; 
-            --white: #FFFFFF; 
-            --light-gray: #F8F9FA; 
-            --border-color: #EAEAEA;
-        }
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-            font-family: '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-        }
-        body { 
-            color: var(--slate); 
-            background-color: var(--white); 
-            line-height: 1.6; 
-            -webkit-font-smoothing: antialiased;
-        }
-        .container { 
-            max-width: 1100px; 
-            margin: 0 auto; 
-            padding: 0 2rem; 
-        }
-        
-        /* Navigation / Header */
-        header { 
-            padding: 2rem 0; 
-            border-bottom: 1px solid var(--border-color); 
-        }
-        .brand {
-            display: flex;
-            flex-direction: column;
-        }
-        .logo-text { 
-            font-size: 1.4rem; 
-            font-weight: 800; 
-            color: var(--navy); 
-            letter-spacing: 2px; 
-            line-height: 1;
-        }
-        .logo-subtext { 
-            font-weight: 300; 
-            letter-spacing: 4px; 
-            font-size: 0.8rem; 
-            color: var(--slate); 
-            margin-top: 0.3rem; 
-            text-transform: uppercase;
-        }
-        
-        /* Hero Branding Section */
-        .hero { 
-            padding: 6rem 0; 
-            text-align: center; 
-            background: linear-gradient(to bottom, var(--light-gray), var(--white)); 
-        }
-        h1 { 
-            font-size: 2.75rem; 
-            font-weight: 800; 
-            color: var(--navy); 
-            margin-bottom: 1.5rem; 
-            letter-spacing: -0.5px; 
-            line-height: 1.2;
-        }
-        .hero p { 
-            font-size: 1.25rem; 
-            max-width: 750px; 
-            margin: 0 auto 2.5rem; 
-            color: var(--slate); 
-        }
-        .btn { 
-            display: inline-block; 
-            background-color: var(--navy); 
-            color: var(--white); 
-            padding: 0.85rem 2.25rem; 
-            font-weight: 700; 
-            text-decoration: none; 
-            border-radius: 4px; 
-            letter-spacing: 0.5px; 
-            transition: transform 0.2s, background-color 0.2s; 
-        }
-        .btn:hover { 
-            transform: translateY(-2px); 
-            background-color: #111921;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proximity Partners | Google Maps Visibility for Albuquerque Businesses</title>
+  <meta name="description" content="More calls and walk-ins from Google Maps. Proximity Partners sets up and maintains Google profiles for Albuquerque restaurants, salons and barbers. One setup fee, one monthly plan. Free Maps audit.">
+  <link rel="canonical" href="https://proximitypartners.business/">
+  <meta name="theme-color" content="#19293E">
+  <meta name="color-scheme" content="light">
 
-        /* The Service Plan Breakdown */
-        .features { 
-            padding: 6rem 0; 
-        }
-        .section-title { 
-            font-size: 2rem; 
-            font-weight: 800; 
-            text-align: center; 
-            margin-bottom: 3.5rem; 
-            color: var(--navy); 
-            letter-spacing: -0.5px;
-        }
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 2.5rem; 
-        }
-        .feature-card { 
-            padding: 2rem; 
-            border: 1px solid var(--border-color); 
-            border-radius: 6px; 
-            background-color: var(--white);
-        }
-        .feature-card h3 { 
-            margin-bottom: 0.75rem; 
-            color: var(--navy); 
-            font-weight: 700; 
-            font-size: 1.2rem;
-        }
-        .feature-card p {
-            font-size: 0.95rem;
-            color: #556370;
-        }
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Proximity Partners">
+  <meta property="og:title" content="Proximity Partners | We put local businesses on the map">
+  <meta property="og:description" content="Google Maps visibility for Albuquerque restaurants, salons and barbers. Setup in 7 days, monthly upkeep, a 1-page report on the 5th. Get a free Maps audit.">
+  <meta property="og:url" content="https://proximitypartners.business/">
+  <meta property="og:image" content="https://proximitypartners.business/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Proximity Partners logo over a street grid. Google Maps visibility, Albuquerque, NM.">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Proximity Partners | We put local businesses on the map">
+  <meta name="twitter:description" content="Google Maps visibility for Albuquerque restaurants, salons and barbers. Get a free Maps audit.">
+  <meta name="twitter:image" content="https://proximitypartners.business/og-image.png">
 
-        /* Transparent Pricing Matrix */
-        .pricing { 
-            padding: 6rem 0; 
-            background-color: var(--light-gray); 
-        }
-        .pricing-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 2.5rem; 
-            max-width: 850px; 
-            margin: 0 auto; 
-        }
-        .price-card { 
-            background: var(--white); 
-            padding: 3rem 2rem; 
-            border-radius: 8px; 
-            border: 1px solid var(--border-color); 
-            text-align: center; 
-        }
-        .price-card.premium-tier { 
-            border: 2px solid var(--navy); 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-        .price-card h3 { 
-            font-size: 1.6rem; 
-            color: var(--navy); 
-            margin-bottom: 0.25rem; 
-            font-weight: 800;
-        }
-        .tier-subtitle {
-            color: #7F8C8D; 
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .price { 
-            font-size: 3rem; 
-            font-weight: 800; 
-            color: var(--navy); 
-            margin-bottom: 0.25rem; 
-        }
-        .price span {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #7F8C8D;
-        }
-        .setup { 
-            font-size: 0.95rem; 
-            color: #7F8C8D; 
-            margin-bottom: 2rem; 
-            font-weight: 500;
-        }
-        .price-card p.tier-desc { 
-            font-size: 0.95rem; 
-            color: var(--slate); 
-            border-top: 1px solid var(--border-color);
-            padding-top: 1.5rem;
-        }
-        .commitment-note {
-            text-align: center; 
-            margin-top: 3rem; 
-            font-size: 0.9rem; 
-            color: #7F8C8D;
-        }
-        
-        /* De-risking & Trust Structure */
-        .guarantee { 
-            padding: 6rem 0; 
-            text-align: center; 
-            max-width: 750px; 
-            margin: 0 auto; 
-        }
-        .guarantee p {
-            font-size: 1.1rem;
-            color: #556370;
-            margin-top: 1rem;
-        }
-        
-        /* Corporate Footer */
-        footer { 
-            background-color: var(--navy); 
-            color: var(--white); 
-            padding: 4rem 0; 
-            text-align: center; 
-            font-size: 0.95rem; 
-        }
-        footer p.contact-info { 
-            letter-spacing: 0.5px; 
-            margin-bottom: 1rem;
-        }
-        footer p.contact-info strong {
-            color: var(--white);
-            background-color: rgba(255,255,255,0.1);
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        footer p.copyright { 
-            font-size: 0.85rem; 
-            opacity: 0.5; 
-        }
-    </style>
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://www.paypal.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="/main.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://proximitypartners.business/#business",
+    "name": "Proximity Partners",
+    "description": "Google Search and Google Maps visibility for founder-owned local businesses in Albuquerque, NM. One-time setup plus a monthly plan.",
+    "url": "https://proximitypartners.business/",
+    "logo": "https://proximitypartners.business/assets/logo.png",
+    "image": "https://proximitypartners.business/og-image.png",
+    "email": "go@proximitypartners.business",
+    "telephone": "+1-210-537-3885",
+    "founder": { "@type": "Person", "name": "Breanna Gutierrez" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Albuquerque",
+      "addressRegion": "NM",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 35.0844, "longitude": -106.6504 },
+    "areaServed": { "@type": "City", "name": "Albuquerque" },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "Proximity Eats",
+        "description": "Google profile setup and monthly upkeep for restaurants. $199 one-time setup plus $149 per month.",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": 149, "priceCurrency": "USD", "unitText": "MONTH" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Proximity Books",
+        "description": "Google profile setup and monthly upkeep for salons, barbers and appointment businesses. $299 one-time setup plus $199 per month.",
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": 199, "priceCurrency": "USD", "unitText": "MONTH" }
+      }
+    ]
+  }
+  </script>
+  <!-- PLACEHOLDER (schema): once they exist, add to the JSON-LD above:
+       "sameAs": ["<your Google Business Profile URL>", "<Instagram/LinkedIn URL>"],
+       "openingHours": "Mo-Fr 09:00-17:00"  (your real hours),
+       and "streetAddress"/"postalCode" only if you want a public address. -->
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <header>
-        <div class="container">
-            <div class="brand">
-                <div class="logo-text">PROXIMITY</div>
-                <div class="logo-subtext">Partners</div>
-            </div>
-        </div>
-    </header>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/" aria-label="Proximity Partners, home">
+        <img src="/assets/logo.png" alt="Proximity Partners" width="640" height="163">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-label">Menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#plans">Plans</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+        <a class="btn btn-small" href="#audit">Free Maps audit</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>We Put Local Businesses at the Top of the "Near Me" Search Grid.</h1>
-            <p>Every day, hundreds of buyers in your neighborhood search for your exact services on Google Maps. If your business is locked out of the top 3 spots, you remain completely invisible. We plug the leak.</p>
-            <a href="mailto:go@proximitypartners.business" class="btn">Request a Local Search Audit</a>
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal">Google Search &amp; Maps visibility &middot; Albuquerque, NM</p>
+          <h1 id="hero-title" class="reveal">We put local businesses on the map. <em>Literally.</em></h1>
+          <p class="lede reveal">When someone nearby searches for what you sell, Google shows a map with a handful of businesses on it. I get you onto that map and keep you there, so more of those searches turn into calls, bookings and people walking through your door.</p>
+          <div class="hero-actions reveal">
+            <a class="btn" href="#audit">Get a free Maps audit <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="link-quiet" href="#plans">See pricing</a>
+          </div>
         </div>
+
+        <figure class="hero-map reveal" aria-hidden="true">
+          <svg class="map-svg" viewBox="0 0 520 560" focusable="false">
+            <rect class="map-bg" x="0" y="0" width="520" height="560"/>
+            <g class="map-minor">
+              <path d="M0 52H520M0 118H520M0 190H520M0 262H520M0 338H520M0 410H520M0 482H520"/>
+              <path d="M48 0V560M112 0V560M184 0V560M256 0V560M330 0V560M402 0V560M470 0V560"/>
+            </g>
+            <g class="map-major">
+              <path d="M0 300H520"/>
+              <path d="M292 0V560"/>
+              <path d="M-20 520C120 470 190 400 250 330S400 170 560 120"/>
+            </g>
+            <g class="map-blocks">
+              <rect x="120" y="126" width="56" height="56"/>
+              <rect x="338" y="346" width="56" height="56"/>
+              <rect x="56" y="418" width="48" height="56"/>
+            </g>
+            <g class="map-dots">
+              <circle cx="84" cy="88" r="5"/>
+              <circle cx="220" cy="228" r="5"/>
+              <circle cx="436" cy="226" r="5"/>
+              <circle cx="150" cy="372" r="5"/>
+              <circle cx="436" cy="448" r="5"/>
+              <circle cx="370" cy="84" r="5"/>
+            </g>
+            <circle class="map-ring" cx="352" cy="262" r="46"/>
+            <circle class="map-ring map-ring-outer" cx="352" cy="262" r="84"/>
+          </svg>
+          <img class="map-pin" src="/assets/mark.png" alt="" width="219" height="318">
+          <span class="map-tag">You are here</span>
+          <figcaption class="map-caption">35.0844&deg; N &middot; 106.6504&deg; W</figcaption>
+        </figure>
+      </div>
+
+      <div class="wrap">
+        <ul class="hero-facts reveal" aria-label="At a glance">
+          <li><span class="fact-k">Setup</span> Live within 7 days</li>
+          <li><span class="fact-k">Upkeep</span> Handled every month</li>
+          <li><span class="fact-k">Report</span> 1 page, on the 5th</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">The Local Visibility Plan</h2>
-            <div class="grid">
-                <div class="feature-card">
-                    <h3>Profile Rebuild</h3>
-                    <p>Complete programmatic restructuring of your categories, service listings, data structures, and merchant descriptions with high-volume local terms.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>1-Page Mobile Match</h3>
-                    <p>A high-speed, single-page web environment engineered strictly to convert map traffic directly into taps, clicks, and incoming phone calls.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Local Network Sync</h3>
-                    <p>Establishing identical, high-authority commercial directory profiles across Apple Maps, Yelp, Bing Places, Facebook, and Nextdoor.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Review Accelerator</h3>
-                    <p>Deployment of a simplified review-request text pipeline built to systematically collect premium five-star feedback from your customers instantly.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Hands-Free Engagement</h3>
-                    <p>Strategic scheduling of local business updates and comprehensive moderation of incoming review strings with guaranteed forty-eight-hour response times.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>The 5th-of-the-Month Report</h3>
-                    <p>A transparent, single-page performance summary monitoring raw customer call logs, route direction requests, and direct visibility rankings against your top local competitor.</p>
-                </div>
-            </div>
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section how" aria-labelledby="how-title">
+      <div class="wrap split">
+        <div class="split-aside">
+          <p class="eyebrow reveal">How it works</p>
+          <h2 id="how-title" class="reveal">Three steps. You do the first one.</h2>
         </div>
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">01</span>
+            <div>
+              <h3>Free audit</h3>
+              <p>Two minutes of your time. Tell me your business and I&rsquo;ll show you where you rank on Google Maps next to your top competitor, and what&rsquo;s keeping you below them.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">02</span>
+            <div>
+              <h3>Setup within 7 days</h3>
+              <p>I rebuild your Google profile: categories, hours, services, photos, and the buttons that get people to call, order or book. You approve it once. It goes live within a week.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num" aria-hidden="true">03</span>
+            <div>
+              <h3>Monthly upkeep</h3>
+              <p>Every month I post, answer reviews and fix what Google changes. On the 5th you get a <span class="nowrap">1-page</span> report: calls, direction requests, and where you rank against that same competitor.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <section class="pricing">
-        <div class="container">
-            <h2 class="section-title">Simple, Tiered Pricing Matrix</h2>
-            <div class="pricing-grid">
-                <div class="price-card">
-                    <h3>Volume Tier</h3>
-                    <div class="tier-subtitle">Food & Retail</div>
-                    <div class="price">$199<span>/mo</span></div>
-                    <div class="setup">$199 One-Time Setup Fee</div>
-                    <p class="tier-desc">Optimized performance tracking built specifically for local taco shops, food trucks, casual eateries, barbershops, and independent boutique storefronts.</p>
-                    Value Tier
-Independent Services
-$299/mo
-$299 One-Time Setup Fee
-High-yield operational management engineered for independent automotive repair shops, beauty salons, local plumbing operators, roofers, and professional handymen.
+    <!-- PLANS -->
+    <section id="plans" class="section plans" aria-labelledby="plans-title">
+      <div class="wrap">
+        <div class="plans-head">
+          <p class="eyebrow reveal">Plans</p>
+          <h2 id="plans-title" class="reveal">Two plans, built around how your customers find you.</h2>
+          <p class="plans-intro reveal">One setup fee, then one monthly price. No add-ons, no ad spend, no surprise invoices.</p>
+        </div>
 
+        <div class="plan-grid">
+          <article class="plan reveal" aria-labelledby="plan-eats">
+            <header class="plan-top">
+              <h3 id="plan-eats">Proximity <em>Eats</em></h3>
+              <p class="plan-for">For restaurants, cafes and food trucks</p>
+            </header>
+            <p class="plan-price">
+              <span class="price-num">$149</span><span class="price-unit">/month</span>
+            </p>
+            <p class="plan-setup">+ $199 one-time setup</p>
+            <ul class="dot-list">
+              <li>Your menu and photos on Google</li>
+              <li>An order or reserve button on your profile</li>
+              <li>Replies to your Google reviews</li>
+              <li>4 Google posts a month</li>
+              <li>A <span class="nowrap">1-page</span> report on the 5th</li>
+            </ul>
+            <a class="btn btn-outline" href="#audit" data-plan="Restaurant / food">Start with a free audit</a>
+            <div class="plan-pay">
+              <p class="plan-pay-label">Ready to start? Subscribe with PayPal and I&rsquo;ll reach out to schedule your setup.</p>
+              <div class="paypal-slot" id="paypal-eats" data-plan-id="P-5HC5247672656715SNLFPEEA" data-plan-name="Proximity Eats"></div>
+              <noscript><p class="plan-pay-fallback">Turn on JavaScript to subscribe here, or email <a href="mailto:go@proximitypartners.business">go@proximitypartners.business</a>.</p></noscript>
+            </div>
+          </article>
 
-*All service agreements require an initial three-month commitment to capture algorithm indexing loops, moving to standard month-to-month terms thereafter.
+          <article class="plan reveal" aria-labelledby="plan-books">
+            <header class="plan-top">
+              <h3 id="plan-books">Proximity <em>Books</em></h3>
+              <p class="plan-for">For salons, barbers and appointment businesses</p>
+            </header>
+            <p class="plan-price">
+              <span class="price-num">$199</span><span class="price-unit">/month</span>
+            </p>
+            <p class="plan-setup">+ $299 one-time setup</p>
+            <ul class="dot-list">
+              <li>Your booking link on Google</li>
+              <li>An automatic review request after every appointment</li>
+              <li>Replies to your Google reviews</li>
+              <li>4 Google posts a month</li>
+              <li>A <span class="nowrap">1-page</span> report on the 5th</li>
+            </ul>
+            <a class="btn btn-outline" href="#audit" data-plan="Salon / barber">Start with a free audit</a>
+            <div class="plan-pay">
+              <p class="plan-pay-label">Ready to start? Subscribe with PayPal and I&rsquo;ll reach out to schedule your setup.</p>
+              <div class="paypal-slot" id="paypal-books" data-plan-id="P-1TG72168ER782032VNLFPDEA" data-plan-name="Proximity Books"></div>
+              <noscript><p class="plan-pay-fallback">Turn on JavaScript to subscribe here, or email <a href="mailto:go@proximitypartners.business">go@proximitypartners.business</a>.</p></noscript>
+            </div>
+          </article>
+        </div>
 
-Our 90-Day Performance Guarantee
-We tie our firm's success directly to your physical revenue pipelines. If your business dashboard does not reflect a clear, measurable increase in organic phone calls or profile customer interactions within your first ninety days of deployment, you retain the right to cancel immediately with zero penalties or hidden exit overhead.
-Managing Partner Access: go@proximitypartners.business
-© 2026 Proximity Partners. Albuquerque, NM. All rights reserved.
+        <dl class="terms reveal">
+          <div>
+            <dt>Commitment</dt>
+            <dd>3-month minimum, then month to month. Google takes time to respond, and three months is the fair window to judge the work.</dd>
+          </div>
+          <div>
+            <dt>Included in both</dt>
+            <dd>Website hosting and updates. Send me a new menu, new hours or new photos and I update your site for you.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- FOUNDING CLIENTS -->
+    <section class="founding" aria-labelledby="founding-title">
+      <img class="founding-mark" src="/assets/mark-white.png" alt="" width="219" height="318" loading="lazy">
+      <div class="wrap founding-grid">
+        <p class="eyebrow eyebrow-light reveal">Founding clients &middot; 5 spots</p>
+        <div class="founding-body">
+          <h2 id="founding-title" class="reveal">Be one of my first five.</h2>
+          <p class="reveal">I&rsquo;m just starting out, and I&rsquo;d rather tell you that than fake a wall of reviews. The first 5 businesses that sign up get a reduced setup fee. In exchange, once you&rsquo;ve seen the work, you give me an honest testimonial I can share.</p>
+          <p class="reveal">Same plan, same monthly price, same work. You just get in early.</p>
+          <a class="btn btn-light reveal" href="#audit" data-plan="founding">Ask about a founding spot <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <figure class="about-figure reveal">
+          <!-- PLACEHOLDER (photo): replace this block with a real photo of you, e.g.
+               <img src="/assets/breanna.jpg" alt="Breanna Gutierrez, founder of Proximity Partners" width="800" height="1000" loading="lazy">
+               Portrait orientation (4:5) works best. Until then the logo mark shows here. -->
+          <div class="about-photo-fallback">
+            <img src="/assets/mark.png" alt="" width="219" height="318" loading="lazy">
+          </div>
+          <figcaption>Breanna Gutierrez, founder. Albuquerque, NM.</figcaption>
+        </figure>
+
+        <div class="about-copy">
+          <p class="eyebrow reveal">About</p>
+          <h2 id="about-title" class="reveal">Hi, I&rsquo;m Breanna.</h2>
+          <div class="prose">
+            <p class="reveal">I run Proximity Partners out of Albuquerque while I finish school at UNM. I started it because some of the best places in this city are the hardest to find on Google. Great food, great cuts, and a Maps listing with old hours and no photos.</p>
+            <p class="reveal">When you work with me, you work with me. No account manager, no call center, no handoff. I learn your business, I do the work, and I tell you plainly what&rsquo;s working and what isn&rsquo;t.</p>
+            <p class="reveal">I keep it to two plans on purpose. Get you found, keep your profile active, show you the numbers. That&rsquo;s the job.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section faq" aria-labelledby="faq-title">
+      <div class="wrap split">
+        <div class="split-aside split-sticky">
+          <p class="eyebrow reveal">FAQ</p>
+          <h2 id="faq-title" class="reveal">Straight answers.</h2>
+          <p class="faq-more reveal">Something else? Email <a href="mailto:go@proximitypartners.business">go@proximitypartners.business</a>.</p>
+        </div>
+        <div class="faq-list">
+          <details class="reveal">
+            <summary>Do you guarantee I&rsquo;ll be #1 on Google?</summary>
+            <div class="answer">
+              <p>No. Nobody honestly can. Google ranks local results on relevance, distance and reputation, and distance changes with every person searching. A business three blocks away will often outrank you for someone standing next to it.</p>
+              <p>What I can promise is the work: a complete, active, well-reviewed profile, and a monthly report that shows exactly where you stand. Anyone who guarantees #1 is guessing.</p>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>What do I need to do?</summary>
+            <div class="answer">
+              <p>Very little. One short call at the start, a few photos if you have them, and a yes when I send you the setup to approve. After that, keep running your business. I handle the upkeep.</p>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>What access do you need?</summary>
+            <div class="answer">
+              <p>Manager access to your Google Business Profile, which you grant from your own Google account. You stay the owner. If you don&rsquo;t have a profile yet, I&rsquo;ll help you create and verify one in your name.</p>
+              <p>On Proximity Books, I&rsquo;ll also connect to your booking tool so review requests go out after each appointment. We&rsquo;ll sort out the details on the setup call.</p>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>Can I cancel?</summary>
+            <div class="answer">
+              <!-- PLACEHOLDER (policy): add your cancellation notice period here, e.g. "Just tell me before your next billing date." -->
+              <p>Yes. Both plans have a 3-month minimum, then go month to month and you can cancel any time. Your Google profile, photos and reviews are yours and stay yours.</p>
+            </div>
+          </details>
+          <details class="reveal">
+            <summary>How fast will I see results?</summary>
+            <div class="answer">
+              <p>Profile fixes show up on Google within days. Ranking changes take longer, usually weeks to a few months, depending on your category and how crowded your area is. That&rsquo;s why there&rsquo;s a 3-month minimum, and why you get a report every month so you can watch it move.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / AUDIT -->
+    <section id="audit" class="section contact" aria-labelledby="audit-title">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow reveal">Free Maps audit</p>
+          <h2 id="audit-title" class="reveal">See where you rank. <em>Free.</em></h2>
+          <p class="reveal">Fill this out and I&rsquo;ll look up your business on Google Maps next to your top competitor. You get a short, plain-English audit of where you stand and what I&rsquo;d fix first. You&rsquo;ll hear back within 48 hours. No charge, no pressure.</p>
+
+          <ul class="contact-direct reveal">
+            <li>
+              <span class="fact-k">Email</span>
+              <a href="mailto:go@proximitypartners.business">go@proximitypartners.business</a>
+            </li>
+            <li>
+              <span class="fact-k">Call or text</span>
+              <a href="tel:+12105373885">210-537-3885</a>
+            </li>
+            <li>
+              <span class="fact-k">Based in</span>
+              Albuquerque, NM
+            </li>
+            <!-- PLACEHOLDER (hours): add your contact hours as another <li> if you want to show them. -->
+          </ul>
+        </div>
+
+        <!-- PLACEHOLDER (form backend): the site is hosted on GitHub Pages, which can't receive form posts.
+             For now, main.js turns a submission into a pre-filled email to go@proximitypartners.business
+             in the visitor's own email app. Swap in a real form service (or move hosting to Netlify and
+             restore Netlify Forms) when you're ready. -->
+        <form class="audit-form reveal" name="audit" method="POST" action="mailto:go@proximitypartners.business?subject=Free%20Maps%20audit%20request" enctype="text/plain" data-mailto="go@proximitypartners.business">
+
+          <div class="field">
+            <label for="f-name">Your name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-business">Business name</label>
+            <input id="f-business" name="business" type="text" autocomplete="organization" required>
+          </div>
+          <div class="field">
+            <label for="f-contact">Phone or email</label>
+            <input id="f-contact" name="contact" type="text" autocomplete="email" inputmode="email" required aria-describedby="f-contact-hint">
+            <p class="hint" id="f-contact-hint">Whichever you actually check.</p>
+          </div>
+          <div class="field">
+            <label for="f-type">Business type</label>
+            <div class="select-wrap">
+              <select id="f-type" name="business_type" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>Restaurant / food</option>
+                <option>Salon / barber</option>
+                <option>Other appointment business</option>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-block" type="submit">Get my free audit <span class="btn-arrow" aria-hidden="true">&rarr;</span></button>
+          <p class="form-note">This opens your email app with your request filled in. Just hit send. I&rsquo;ll only use it to send your audit. No mailing list.</p>
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/logo-white.png" alt="Proximity Partners" width="640" height="163" loading="lazy">
+        <p>Google Search and Maps visibility for founder-owned businesses in Albuquerque.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#plans">Plans</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#audit">Free Maps audit</a></li>
+        </ul>
+      </nav>
+      <address class="footer-contact">
+        <a href="mailto:go@proximitypartners.business">go@proximitypartners.business</a>
+        <a href="tel:+12105373885">210-537-3885</a>
+        <span>Albuquerque, NM</span>
+      </address>
+    </div>
+    <div class="wrap footer-base">
+      <p>&copy; 2026 Proximity Partners</p>
+      <p>Not affiliated with Google. Google and Google Maps are trademarks of Google LLC.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -518,7 +518,13 @@ h2 { font-size: var(--fs-h2); }
   border-top: 1px solid var(--rule);
 }
 .plan-pay-label { max-width: 22rem; margin-bottom: 1rem; font-size: var(--fs-small); color: var(--slate); }
-.paypal-slot { max-width: 20rem; min-height: 6.5rem; }
+.paypal-slot {
+  /* PayPal's iframes carry a high z-index; contain them so the sticky header and menu stay on top */
+  position: relative;
+  z-index: 0;
+  max-width: 20rem;
+  min-height: 6.5rem;
+}
 .plan-pay-fallback { font-size: var(--fs-small); color: var(--slate); }
 
 @media (min-width: 48em) {

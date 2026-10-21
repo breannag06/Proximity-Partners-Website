@@ -365,13 +365,10 @@
           </ul>
         </div>
 
-        <!-- Submissions are emailed to go@proximitypartners.business by FormSubmit (formsubmit.co).
-             The first submission sends an activation email to that inbox; click the link once to switch the form on. -->
-        <form class="audit-form reveal" name="audit" method="POST" action="https://formsubmit.co/go@proximitypartners.business">
-          <input type="hidden" name="_subject" value="New free Maps audit request">
-          <input type="hidden" name="_next" value="https://proximitypartners.business/thanks.html">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
+        <!-- Netlify Forms collects submissions (form name "audit"). The ops server picks them up,
+             runs the free Maps audit, and sends Breanna the draft in Telegram. "_honey" is the spam trap. -->
+        <form class="audit-form reveal" name="audit" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="_honey">
+          <input type="hidden" name="form-name" value="audit">
           <p class="visually-hidden">
             <label>Leave this empty: <input name="_honey" tabindex="-1" autocomplete="off"></label>
           </p>

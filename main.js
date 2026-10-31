@@ -37,7 +37,7 @@
   document.querySelectorAll('[data-plan]').forEach(function (link) {
     link.addEventListener('click', function () {
       var plan = link.getAttribute('data-plan');
-      if (!typeSelect || plan === 'founding') return;
+      if (!typeSelect) return;
       typeSelect.value = plan;
     });
   });
